@@ -10,10 +10,10 @@ script:
   - docker run -e CI=true klin7/react-test npm test
 
 after_success:
-  - docker build -t klin/multi-client ./client
-  - docker build -t klin/multi-nginx ./nginx
-  - docker build -t klin/multi-server ./server
-  - docker build -t klin/multi-worker ./worker
+  - docker build -t klin7/multi-client ./client
+  - docker build -t klin7/multi-nginx ./nginx
+  - docker build -t klin7/multi-server ./server
+  - docker build -t klin7/multi-worker ./worker
   # Login to the docker CLI
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
@@ -21,10 +21,10 @@ after_success:
 
   # Take those image and push those to docker hub
 
-  - docker push klin/multi-client
-  - docker push klin/multi-nginx
-  - docker push klin/multi-server
-  - docker push klin/multi-worker
+  - docker push klin7/multi-client
+  - docker push klin7/multi-nginx
+  - docker push klin7/multi-server
+  - docker push klin7/multi-worker
   
   
   
